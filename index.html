@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Izel Mejia</title>
+<meta name="description" content="Izel Mejia, Statistics and Data Science student at UCLA. Projects in data pipelines, NLP, and applied statistics.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Public+Sans:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#F4F7F9;
+  --grid:#DCE4EA;
+  --ink:#16222E;
+  --muted:#556574;
+  --rule:#C9D3DB;
+  --accent:#1F55C0;
+  --point:#16222E;
+  --display:"Bricolage Grotesque", system-ui, sans-serif;
+  --body:"Public Sans", system-ui, sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#101820; --grid:#1C2833; --ink:#E6ECF1; --muted:#9AA9B6;
+    --rule:#2A3946; --accent:#7FA6F5; --point:#E6ECF1;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#101820; --grid:#1C2833; --ink:#E6ECF1; --muted:#9AA9B6;
+  --rule:#2A3946; --accent:#7FA6F5; --point:#E6ECF1;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0; background:var(--paper); color:var(--ink);
+  font-family:var(--body); font-size:17px; line-height:1.6;
+}
+a{color:var(--accent); text-underline-offset:3px; text-decoration-thickness:1px}
+a:hover{text-decoration-thickness:2px}
+a:focus-visible{outline:2px solid var(--accent); outline-offset:3px; border-radius:2px}
+.wrap{max-width:880px; margin:0 auto; padding:0 24px}
+
+/* Hero on graph paper */
+.hero{
+  background-image:
+    linear-gradient(var(--grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+  background-size:24px 24px;
+  background-position:-1px -1px;
+  border-bottom:1px solid var(--rule);
+}
+.hero .wrap{display:grid; grid-template-columns:1.15fr 1fr; gap:40px; align-items:end; padding-top:88px; padding-bottom:64px}
+.hero h1{
+  font-family:var(--display); font-weight:700; font-size:clamp(3rem, 9vw, 5.6rem);
+  line-height:.92; letter-spacing:-.03em; margin:0 0 24px;
+}
+.hero p{max-width:34em; margin:0 0 12px; background:var(--paper); box-shadow:0 0 0 6px var(--paper)}
+.hero .links{margin-top:20px; display:flex; flex-wrap:wrap; gap:6px 20px; font-weight:600}
+.plot{width:100%; height:auto; overflow:visible}
+.plot .pt{fill:var(--point)}
+.plot .fit{stroke:var(--accent); stroke-width:2.5; fill:none; stroke-linecap:round}
+.plot .axis{stroke:var(--ink); stroke-width:1.5}
+.plot text{font-family:var(--body); font-size:11px; fill:var(--muted)}
+@media (prefers-reduced-motion: no-preference){
+  .plot .fit{stroke-dasharray:420; stroke-dashoffset:420; animation:draw 1.4s .4s ease-out forwards}
+  @keyframes draw{to{stroke-dashoffset:0}}
+}
+
+/* Sections */
+section{padding:56px 0 8px}
+h2{font-family:var(--display); font-weight:700; font-size:1.9rem; letter-spacing:-.015em; margin:0 0 28px}
+.entry{display:grid; grid-template-columns:180px 1fr; gap:8px 32px; padding:24px 0; border-top:1px solid var(--rule)}
+.entry:last-child{border-bottom:1px solid var(--rule)}
+.meta{color:var(--muted); font-size:.92rem; line-height:1.5}
+.meta strong{display:block; color:var(--ink); font-weight:600}
+h3{font-family:var(--display); font-weight:500; font-size:1.3rem; line-height:1.25; margin:0 0 8px; letter-spacing:-.005em}
+.entry p{margin:0 0 10px; max-width:38em}
+.entry ul{margin:4px 0 0; padding-left:1.1em; max-width:38em}
+.entry li{margin:0 0 8px}
+.entry li::marker{color:var(--muted)}
+.status{font-style:italic}
+.repo{font-weight:600}
+
+footer{padding:64px 0 72px}
+footer p{max-width:34em; margin:0 0 16px}
+footer .links{display:flex; flex-wrap:wrap; gap:6px 24px; font-weight:600}
+
+@media (max-width:720px){
+  body{font-size:16px}
+  .hero .wrap{grid-template-columns:1fr; padding-top:56px; padding-bottom:40px; gap:24px}
+  .plot{max-width:360px}
+  .entry{grid-template-columns:1fr; gap:6px}
+  .wrap{padding:0 16px}
+  section{padding-top:44px}
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div>
+      <h1>Izel<br>Mejia</h1>
+      <p>I study Statistics and Data Science at UCLA. I like taking messy data, like forum threads or meeting transcripts, and turning it into something a team can actually use.</p>
+      <p>Looking for Summer 2027 internships in data science and analytics.</p>
+      <div class="links">
+        <a href="mailto:izelmejia5@gmail.com">Email</a>
+        <a href="https://www.linkedin.com/in/izel-mejia-567a67378">LinkedIn</a>
+        <a href="https://github.com/izel5">GitHub</a>
+        <a href="Izel_Mejia_Resume.pdf">Resume (PDF)</a>
+      </div>
+    </div>
+    <svg class="plot" viewBox="0 0 320 240" role="img" aria-label="Illustration: a scatter plot with a fitted regression line">
+      <line class="axis" x1="20" y1="220" x2="310" y2="220"/>
+      <line class="axis" x1="20" y1="220" x2="20" y2="10"/>
+      <g>
+        <circle class="pt" cx="42" cy="196" r="4"/><circle class="pt" cx="58" cy="182" r="4"/>
+        <circle class="pt" cx="70" cy="200" r="4"/><circle class="pt" cx="86" cy="170" r="4"/>
+        <circle class="pt" cx="98" cy="178" r="4"/><circle class="pt" cx="112" cy="150" r="4"/>
+        <circle class="pt" cx="126" cy="162" r="4"/><circle class="pt" cx="140" cy="138" r="4"/>
+        <circle class="pt" cx="152" cy="146" r="4"/><circle class="pt" cx="166" cy="120" r="4"/>
+        <circle class="pt" cx="180" cy="128" r="4"/><circle class="pt" cx="196" cy="102" r="4"/>
+        <circle class="pt" cx="208" cy="112" r="4"/><circle class="pt" cx="222" cy="86" r="4"/>
+        <circle class="pt" cx="236" cy="96" r="4"/><circle class="pt" cx="250" cy="70" r="4"/>
+        <circle class="pt" cx="264" cy="78" r="4"/><circle class="pt" cx="280" cy="52" r="4"/>
+        <circle class="pt" cx="292" cy="62" r="4"/>
+      </g>
+      <path class="fit" d="M30 206 L300 46"/>
+      <text x="300" y="236" text-anchor="end">x</text>
+      <text x="8" y="20">y</text>
+    </svg>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section id="experience" aria-labelledby="exp-h">
+    <h2 id="exp-h">Experience</h2>
+
+    <div class="entry">
+      <div class="meta"><strong>AGBO</strong>Innovation Intern<br>Sep 2025 – Jun 2026<br>Los Angeles</div>
+      <div>
+        <h3>Built AI and data tools for strategy, writing, and art teams</h3>
+        <ul>
+          <li>Gave the strategy team its first source of audience sentiment. Before this they only had sales and ratings. I built a crawler over Reddit and web articles, split posts into comment-level chunks, removed duplicates, and added local embeddings with vector search behind a simple search app. Lead engineers took it on and kept building it.</li>
+          <li>Turned a producer's multi-hour transcript reporting process into one click. The pipeline parsed meeting transcripts, updated the project database, and wrote a change report for writers and executives.</li>
+          <li>Built a retrieval-based check that compared new story and design ideas against confirmed project data and flagged contradictions for leadership.</li>
+          <li>Designed a reference database that linked design specs and story context to concept art, so artists could get up to speed on a project on their own.</li>
+          <li>Cleaned and structured a 9,000-pair bilingual word list from an academic source into a training-ready dataset.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="meta"><strong>Sprouts Farmers Market</strong>Head Cashier<br>Apr 2023 – Aug 2025<br>Valencia, CA</div>
+      <div>
+        <h3>Ran the front end of a busy grocery store</h3>
+        <p>Supervised a 40-person team and trained 20 new cashiers, while working 30+ hours a week and taking classes full time.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" aria-labelledby="proj-h">
+    <h2 id="proj-h">Projects</h2>
+
+    <div class="entry">
+      <div class="meta"><strong>Python, scikit-learn, Streamlit</strong>Finished</div>
+      <div>
+        <h3>Consumer Review Sentiment Dashboard</h3>
+        <p>A text classifier trained on the IMDB 50k review benchmark. I cleaned and deduplicated the data, then trained TF-IDF with logistic regression. It reaches 90.7% accuracy on a stratified 20% held-out set. The dashboard shows the confusion matrix, model coefficients, and the words that push a review positive or negative.</p>
+        <a class="repo" href="https://github.com/izel5/movie-review-sentiment-dashboard">View on GitHub</a>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="meta"><strong>Python, arXiv API, Claude API</strong>Finished</div>
+      <div>
+        <h3>AI Research Digest</h3>
+        <p>A command-line tool that pulls recent papers from arXiv on a topic and uses the Claude API to write short Markdown summaries. I built it to keep up with new research without reading every abstract.</p>
+        <a class="repo" href="https://github.com/izel5/ai-research-digest">View on GitHub</a>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="meta"><strong>Python, LanceDB</strong><span class="status">In progress</span></div>
+      <div>
+        <h3>Forum Data Pipeline</h3>
+        <p>An independent crawl-to-dataset pipeline. It collects forum posts, cleans and deduplicates them, and embeds each chunk locally for similarity search. Next I'm adding a SQL layer and an automated analysis step. Code goes public when it's done.</p>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="meta"><strong>R</strong><span class="status">Planned</span></div>
+      <div>
+        <h3>Causal Fairness Audit</h3>
+        <p>An audit of a public dataset using the Causal Fairness Analysis framework from Plečko and Bareinboim. The goal is to split an outcome gap into direct, indirect, and spurious effects instead of reporting one number.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="education" aria-labelledby="edu-h">
+    <h2 id="edu-h">Education</h2>
+    <div class="entry">
+      <div class="meta"><strong>UCLA</strong>Expected Jun 2028</div>
+      <div>
+        <h3>B.S. Statistics and Data Science</h3>
+        <p>Already earned an A.S. in Mathematics, Summa Cum Laude. Coursework includes probability theory, statistical programming in R, data structures, discrete structures, linear algebra, differential equations, and multivariable calculus.</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <h2>Get in touch</h2>
+    <p>The best way to reach me is email. I'm based in Los Angeles.</p>
+    <div class="links">
+      <a href="mailto:izelmejia5@gmail.com">izelmejia5@gmail.com</a>
+      <a href="https://www.linkedin.com/in/izel-mejia-567a67378">LinkedIn</a>
+      <a href="https://github.com/izel5">GitHub</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
